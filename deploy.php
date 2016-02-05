@@ -31,11 +31,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>GIT DEPLOYMENT SCRIPT</title>
+	<title>ProPro - Deployment Service</title>
 </head>
 <body style="background-color: #000000; color: #fafafa; font-weight: bold; padding: 0 10px;">
 <pre><br>
-<span style="font-size:50px; color:#FF9800;">ProPro - Deploy Service</span>
+<span style="font-size:50px; color:#FF9800;">ProPro - Deployment Service</span>
 <br>
 <span style="font-size:30px; color: #FF9800;">Branches:</span>
 <form method="post" action="deploy.php">
