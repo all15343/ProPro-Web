@@ -1,0 +1,43 @@
+<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-card/paper-card.html">
+<link rel="import" href="/bower_components/paper-material/paper-material.html">
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/paper-ripple/paper-ripple.html">
+
+<dom-module id="ad-card">
+    <template>
+        <paper-card class="x-scope paper-card">
+            <a href="{{href}}">
+                <div class="header style-scope paper-card">
+                    <img class="style-scope paper-card" src="{{imgurl}}">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-header">{{header}}</h3>
+                    von {{provider}}
+                </div>
+            </a>
+            <div class="card-actions">
+                <paper-icon-button icon="icons:add-shopping-cart" class="card-icon"></paper-icon-button>
+                <paper-icon-button active="{{favorite}}" toggles icon="icons:favorite" class="card-icon card-button-favorite"></paper-icon-button>
+                <a href="{{href}}">
+                    <paper-icon-button icon="icons:open-in-new" class="card-icon"></paper-icon-button>
+                </a>
+            </div>
+        </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is: 'ad-card',
+            properties: {
+                header: String,
+                provider: String,
+                imgurl: String,
+                href: String,
+                favorite: Boolean,
+                price: String
+            }
+
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,55 @@
+#pictureview{
+	width: 350px;
+	height: 350px;
+	box-shadow: inset 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
+	margin-right: 40px;
+	cursor: pointer;
+}
+#pictureupload{
+	color: #555;
+	width: 80%;
+	height: 80%;
+	margin: 10%
+}
+#inputwrapper{
+	min-width: 40vw;
+	margin-top: 20px;
+}
+.productinput{
+	font-size: 1.3em !important;
+}
+.producttextarea{
+	margin-top: 45px;
+}
+#fileuploaddialog{
+	background: #FAFAFA;
+}
+paper-dialog > *{
+	padding: 0px;
+}
+.buttons{
+	background: #fafafa;
+}
+paper-dialog.paper-dialog-0 .buttons{
+	color: #FF9800;
+    font-weight: 500 !important;
+}
+@media(max-width: 783px){
+	#pictureview{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#inputcontentwrapper{
+		-webkit-flex-direction: column;
+    	flex-direction: column;
+	}
+}
+@media(max-width: 420px){
+
+}
+@media(max-width: 400px){
+	#pictureview{
+		width: 80vw;
+		height: 80vw;
+	}
+}

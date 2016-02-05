@@ -1,0 +1,271 @@
+body {
+  	background: #fafafa;  /*linear-gradient(#fafafa, #FF9800);*/
+  	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  	color: #555;
+  	margin: 0px;
+}
+#main-wrapper{
+	max-width: 1200px;
+	width: calc(100vw - 80px);
+	margin: 0px auto;
+	box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.3);
+	padding: 64px 40px 30px 40px;
+	min-height: calc(100vh - 158px);
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+hr{
+	height: 1px;
+    border: 0px;
+    background: #555;
+}
+
+/*
+	---------- Head ---------- 
+*/
+
+#header-toolbar{
+	background: #FF9800;
+	box-shadow: 0px 3px 30px 10px rgba(0, 0, 0, 0.4);
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	z-index: 10;
+}
+.header-drawer-space{
+	height: 48px;
+}
+.searchbar{
+    border-radius: 7px;
+    font-size: 24px;
+    border: none;
+    padding: 3px 10px;
+    color: #555;
+    margin-left: 15px;
+	background: #fafafa;
+}
+.searchbar:focus{
+    outline-width: 0;
+}
+.header-icon{
+	zoom: 150%;
+	-ms-zoom: 1.5;
+	-webkit-zoom: 1.5;
+    -webkit-transform: scale(1.0);
+	-moz-transform:  scale(1.5,1.5);
+	margin: 0px -3px;
+}
+
+iron-dropdown{
+	margin-left: -9px;
+	margin-top: 64px;
+}
+#drawer{
+	z-index: 20;
+	position: fixed !important;
+}
+paper-drawer-panel{
+	overflow-y: visible !important;
+	overflow-x: hidden !important;
+}
+#scrim{ /* Verdunkelung bei aktiven Drawer*/
+	z-index: 15;
+	position: fixed !important;
+}
+.header-menu{
+	margin-right: -5px;
+}
+.header-drawer-close{
+	left: 50px;
+}
+.paper-menu > .iron-selected{
+	color: #ff9800 !important;
+}
+.like-h1{
+	display: block;
+	font-size: 2em;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+/*
+	---------- Content ----------
+*/
+
+ad-card{
+	max-width: 300px;
+	min-width: 250px;
+	margin: 10px;
+	vertical-align: top;
+}
+
+.card-content {
+	padding: 0px 16px 16px !important;
+	font-size: 12px;
+	color: #555;
+	text-decoration: none;
+}
+.card-actions{
+	text-align: center !important;
+}
+.card-icon{
+	zoom: 120%;
+	z-index: 8;
+	color: #555;
+}
+.card-button-favorite[toggles][active] {
+	color: #dc143c;
+}
+.card-header{
+	font-size: 16px;
+	color: #555;
+	text-decoration: none;
+}
+
+/*
+	---------- Footer ----------
+*/
+
+#footer-toolbar{
+	background: #FF9800;
+	box-shadow: 0px -3px 30px 10px rgba(0, 0, 0, 0.4);
+	font-size: 12px;
+}
+#footer-toolbar-text{
+	margin-right: 40px;
+}
+.no-decoration{
+	text-decoration: none;
+}
+.font-white{
+	color: #fafafa;
+}
+footer{
+	bottom: 0px;
+	width: 100%;
+}
+
+/*	
+	---------- Layout ----------
+*/
+
+paper-toast{
+	/*bottom: 110px;
+	background: #FF9800;
+	color: #fafafa;
+	box-shadow: 0px -3px 30px 10px rgba(0, 0, 0, 0.4);
+	visibility: visible;
+	z-index: 100;
+    right: 10px;
+    left: initial;*/
+    top: 0px; /*100px*/
+    background: #FF9800;
+    color: #fafafa;
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.4);
+    visibility: visible;
+    z-index: 100;
+    right: -400px;
+    border-radius: 0px;
+    padding: 20px;
+    width: 350px;
+    word-wrap: break-word;
+    bottom: inherit;
+    left: inherit;
+}
+}
+/*
+	---------- @Media ----------
+*/
+
+.justmobile{
+	display: none;
+}
+.justmobile-menuitem{
+	display: none !important;
+}
+@media(min-width: 1091px){
+	ad-card{
+		min-width: 18.3%;
+	}
+}
+@media(max-width: 1090px){
+	ad-card{
+		min-width: 23%;
+	}
+}
+@media(max-width: 890px){
+	ad-card{
+		min-width: 31%;
+	}
+}
+@media(max-width: 700px){
+	.justpc{
+		display: none;
+	}
+	.justmobile{
+		display: block;
+	}
+	.justmobile-menuitem{
+		display: flex !important;
+	}
+	body{
+		max-width: 700px;
+	}
+	.searchbar{
+		margin-left: 0px;
+		padding-right: 32px;
+	}
+	.moveintosearchbar{
+		margin-left: -36px;
+		color: #555;
+		zoom: 100%;
+	}
+	.header-menu{
+		margin-right: -8px;
+		margin-left: 2px;
+	}
+	.header-drawer-space{
+		height: 56px;
+	}
+	#main-wrapper{
+		padding: 64px 20px 20px;
+		width: calc(100vw - 40px);
+		min-height: calc(100vh - 148px);
+	}
+	ad-card{
+		min-width: 46.7%;
+		max-width: 700px;
+	}
+}
+@media(max-width: 639px){
+	#main-wrapper{
+		min-height: calc(100vh - 140px);
+	}
+}
+@media(max-width: 470px){
+	ad-card{
+		min-width: 95%;
+		max-width: 500px;
+	}
+	paper-toast{
+		width: 70%;
+		min-width: 200px;
+	}
+
+}
+@media(max-width: 340px){
+	.searchbar{
+		font-size: 18px;
+	}
+}
+@media(max-width: 290px){
+	.searchbar{
+		font-size: 14px;
+	}
+}

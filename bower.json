@@ -1,0 +1,23 @@
+{
+  "name": "ProPro",
+  "authors": [
+    "Alexander <all15343@spengergasse.at>"
+  ],
+  "description": "",
+  "main": "index.jsp",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "propro.gq",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-input": "PolymerElements/paper-input#~1.0.18",
+    "paper-menu-button": "PolymerElements/paper-menu-button#~1.0.3",
+    "iron-swipeable-container": "PolymerElements/iron-swipeable-container#~1.0.2"
+  }
+}

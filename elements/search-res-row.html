@@ -1,0 +1,282 @@
+<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-card/paper-card.html">
+<link rel="import" href="/bower_components/paper-material/paper-material.html">
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/paper-ripple/paper-ripple.html">
+
+<dom-module id="search-res-row">
+    <template>
+        <style type="text/css">
+            .wrapper{
+                height: 200px;
+            }
+            img{
+                max-height: 200px;
+                margin-right: 20px;
+                max-width: 200px;
+                cursor: pointer;
+            }
+            h3{
+                font-size: 0.9em;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                max-height: 3.6em;
+                line-height: 1.2em;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                max-width: 100%;
+                display: -webkit-box;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            p{
+                font-size: 0.5em;
+                font-weight: initial;
+                margin-top: 5px;
+            }
+            .price{
+                font-size: 1.5em;
+                margin-bottom: 0px;
+                margin-top: 0px;
+                text-align: right;
+            }
+            .right{
+                margin-right: 20px;
+                margin-bottom: 0px;
+            }
+            .des{
+                font-size: 0.6em;    
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                max-width: 100%;
+                display: -webkit-box;
+                overflow: hidden;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            hr{
+                width: 1px;
+                border: 0px;
+                background: #555;
+                height: 200px;
+                margin: 0px 10px 0px 30px;
+            }
+            .act{
+                text-align: right;
+                margin-right: -8px;
+                margin-left: 30px;
+            }
+            .just-mobile{
+                display: none !important;
+            }
+            .verysmall{
+                display: none !important;
+            }
+            @media(max-width: 850px){
+                .des{
+                    display: none !important;
+                }
+                hr{
+                    display: none !important;
+                }
+                .right{
+                    display: none !important;
+                }
+                .just-mobile{
+                    display: block !important;
+                }
+                .act{
+                    text-align: left;
+                    margin-bottom: 0px;
+                    float: left;
+                    margin-top: 10px;
+                }
+                .price{
+                    float: right;
+                    margin-top: 10px;
+                }
+            }
+            @media(max-width: 650px){
+                .price{
+                    font-size: 1.3em;
+                }
+                paper-icon-button{
+                    padding: 8px 2px;
+                }
+                .act{
+                    margin-top: 6px;
+                    margin-left: 0px;
+                }
+            }
+            @media(max-width: 530px){
+                img{
+                    max-width: 120px;
+                    max-height: 120px;
+                }
+                hr{
+                    height: 120px;
+                }
+                .wrapper{
+                    height: 120px;
+                }
+                h3{
+                    font-size: 0.6em;
+                }
+                p{
+                    font-size: 0.4em;
+                }
+                paper-icon-button{
+                    zoom: 90%;
+                }
+                .price{
+                    font-size: 0.8em;
+                    margin-top: 14px;
+                }
+            }
+            @media(max-width: 370px){
+                img{
+                    max-width: 100px;
+                    max-height: 100px;
+                }
+                .verysmall{
+                    display: block !important;
+                    margin-top: 10px;
+                }
+                .act{
+                    display: none !important;
+                    margin-top: 10px;
+                }
+                paper-icon-button{
+                    zoom: 100%;
+                    padding: 3px 3px;
+                }
+                h3{
+                    font-size: 0.65em;
+                }
+                p{
+                    font-size: 0.4em;
+                }
+                price{
+                    font-size: 0.5em;
+                }
+                .wrapper{
+                    height: 140px;
+                }
+            }
+            @media(max-width: 280px){
+                img{
+                    display: none !important;
+                }
+                .verysmall{
+                    display: none !important;
+                }
+                .act{
+                    display: block !important;
+                }
+                paper-icon-button{
+                    zoom: 80%;
+                    padding: 8px 3px;
+                }
+            }
+        </style>
+        <div class="horizontal layout flex wrapper">
+            <div>
+                <img class="style-scope" src="{{picture}}" on-click="productopen">
+                <div class="verysmall">
+                    <paper-icon-button icon="icons:add-shopping-cart" class="card-icon"></paper-icon-button>
+                        <paper-icon-button active="{{favorite}}" toggles icon="icons:favorite" class="card-icon card-button-favorite"></paper-icon-button>
+                        <paper-icon-button icon="icons:open-in-new" class="card-icon" on-click="productopen"></paper-icon-button>
+                </div>
+            </div>
+            <div class="vertical layout flex">
+                <h3 on-click="productopen">{{pname}}</h3>
+                <p>
+                    von {{proname}}
+                </p>
+                <p class="des">
+                    {{description}}
+                </p>
+                <div class="just-mobile flex">
+                </div>
+                <div class="just-mobile horizontal">
+                    <div class="act">
+                        <paper-icon-button icon="icons:add-shopping-cart" class="card-icon"></paper-icon-button>
+                        <paper-icon-button active="{{favorite}}" toggles icon="icons:favorite" class="card-icon card-button-favorite"></paper-icon-button>
+                        <paper-icon-button icon="icons:open-in-new" class="card-icon" on-click="productopen"></paper-icon-button>
+                    </div>
+                    <p class="price">
+                        {{price}} €
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="vertical layout right">
+                <div class="flex act">
+                    <paper-icon-button icon="icons:add-shopping-cart" class="card-icon"></paper-icon-button>
+                    <paper-icon-button active="{{favorite}}" toggles icon="icons:favorite" class="card-icon card-button-favorite"></paper-icon-button>
+                    <paper-icon-button icon="icons:open-in-new" class="card-icon" on-click="productopen"></paper-icon-button>
+                </div>
+                <p class="price">
+                    {{price}} €
+                </p>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'search-res-row',
+            properties: {
+                pnr: String,
+                pname: String,
+                pronr: String,
+                proname: String,
+                artnr: String,
+                description: String,
+                picture: String,
+                price: String,
+                favorite: Boolean,
+                data: String
+            },
+
+            attached: function() {
+                if(this.data != 'undefined' && this.data != null)
+                {
+                    var json = JSON.parse(this.data);
+
+                    var pnr = decodeURIComponent(json['pnr']);
+                    if(pnr != null && pnr != 'undefined')
+                        this.pnr = pnr;
+
+                    var pname = decodeURIComponent(json['pname']);
+                    if(pname != null && pname != 'undefined')
+                        this.pname = pname;
+
+                    var proname = decodeURIComponent(json['proname']);
+                    if(proname != null && proname != 'undefined')
+                        this.proname = proname;
+
+                    var picture = decodeURIComponent(json['picture']);
+                    if(picture != null && picture != 'undefined')
+                        this.picture = picture;
+
+                    var price = decodeURIComponent(json['price']);
+                    if(price != null && price != 'undefined')
+                        this.price = price;
+
+                    var description = decodeURIComponent(json['description']);
+                    if(description != null && description != 'undefined')
+                        this.description = description;
+
+                    var favorite = decodeURIComponent(json['favorite']);
+                    if(favorite != null && favorite != 'undefined')
+                        this.favorite = (favorite === 'true');
+                }
+            },
+            productopen:function (){
+                $.cookie("producttoshow",this.data);
+                window.location.href= "/pages/product.php?p=" + this.pnr;
+            }
+        });
+    </script>
+</dom-module>

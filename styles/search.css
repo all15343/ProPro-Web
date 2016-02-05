@@ -1,0 +1,23 @@
+.search-viewselect-menu{
+	vertical-align: bottom;
+	background: transparent !important;
+}
+.search-rescount-select{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 10px;
+	margin-right: 15px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-radius: 0px !important;    
+    font-size: 1em;
+    background: transparent;
+}
+.search-rescount-text{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#results{
+	font-size:1.5em;
+}
