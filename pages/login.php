@@ -1,11 +1,24 @@
 <?php include "../layout/header.php"; ?>
-  <h2>Login</h2>
-  <form action="login.php" method="Post">
-    Username: <input type="text" name="Username"/>
+<link rel="stylesheet" href="../styles/login.css" rel="stylesheet" type="text/css">
+<link rel="import" href="/elements/usertype-tabs.html">
+<link rel="import" href="/bower_components/paper-material/paper-material.html">
+
+<h2 class="like-h1">Login</h2>
+<div id="login-main-wrapper">
+  <usertype-tabs>
+  </usertype-tabs>
+  <div id="login-content-wrapper">
+    <p>Email Adresse:</p>
+    <input type="text" name="Username"/>
     <br />
-    Password: <input type="password" name="Password" />
-    <input type="submit" value="Login" />
-  </form>
+    <p>Passwort:</p>
+    <input type="password" name="Password" />
+    <br>
+    <paper-button>
+      login
+    </paper-button>
+  </div>
+</div>
 <!--<%
   try{
     String username = request.getParameter("Username");

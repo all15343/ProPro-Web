@@ -1,0 +1,44 @@
+<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+
+<dom-module id="usertype-tabs">
+    <template>
+      <style is="custom-style">
+        /*#usertypetabs{
+          background: #FF9800;
+        }
+
+        #usertypetabs paper-tab{
+          color: #fafafa;
+        }*/
+        paper-tabs{
+          background: #FF9800;
+        }
+        :root{
+          --paper-tab-ink: rgba(250, 250, 250, 0.4);
+
+          /* custom CSS property */
+          --paper-tabs-selection-bar-color: #fafafa;
+
+          /* custom CSS mixin */
+          --paper-tabs: {
+              color: #fafafa;
+              font-size: 18px;
+          }
+        }
+      </style>
+      <paper-tabs selected="0">
+        <paper-tab>Kunde</paper-tab>
+        <paper-tab>Lieferant</paper-tab>
+      </paper-tabs>
+    </template>
+    <script>
+        Polymer({
+            is: 'usertype-tabs',
+            properties: {
+                header: String
+            }
+        });
+    </script>
+</dom-module>
